@@ -20,7 +20,7 @@ float shapeNum = 8;
 float rotSpeed = 1.5;
 float scaleNumL = 0;
 float scaleNumG = 0;
-float fade = 20;
+float fade = 80;
 
 int colorR = 250;
 int colorG = 20;
@@ -84,10 +84,17 @@ void draw()
 
   //shapeDis++;
   lights();
+  
+  pushMatrix();
+  
+  translate(0,0, -100);
+  
+  noStroke();
   fill(0, 0, 0, fade);
-  rect(width/2, height/2, width, height);
+  rect(width/2, height/2, width * 2, height * 2);
   fill(colorR, colorG, colorB);
-
+  
+  popMatrix();
   beat.detect(pl_1.mix);
 
   if (beat.isKick()) // isHat, isSnare
@@ -121,7 +128,6 @@ void draw()
   float scale =  (7 + 5 * sin(time)); // two methods for setting scale
   float angle = time * rotSpeed; // two methods for setting angle
 
-  background(123);
 
   pushMatrix();
 
@@ -133,7 +139,10 @@ void draw()
   rotateZ(-angle / 2); // rotate
   scale(3 - (scaleNumG / 1), 3 - (scaleNumG / 1), 3 - (scaleNumG / 1));
   translate(((-shapeDis * shapeNum) / (2)) + (shapeDis / 2), ((-shapeDis * shapeNum) / (2) + (shapeDis / 2)), ((-shapeDis * shapeNum) / (2) + (shapeDis / 2))); // slide up and to the left
-
+  
+  
+  
+  
   //translate(((-(shapeDis + count) * shapeNum) / (2)) + ((shapeDis + count) / 2), ((-(shapeDis + count) * shapeNum) / (2)) + ((shapeDis + count) / 2));
   //translate(-20, -20);
   for (Cube c : cubes)

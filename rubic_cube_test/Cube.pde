@@ -67,7 +67,7 @@ class Cube
       stroke(60, 0,0 , 60);
       
       //tint(255, 0, 0);
-      box(10 - clrNum);
+      box(10 - clrNum * 2);
       endShape();
     }
     
