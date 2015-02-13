@@ -5,7 +5,7 @@ import ddf.minim.analysis.*;
 import ddf.minim.ugens.*;
 import ddf.minim.effects.*;
 
-
+// audio reader
 Minim minim;
 AudioPlayer pl_1;
 BeatDetect beat;
